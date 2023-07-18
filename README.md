@@ -24,7 +24,7 @@
 
 # 📖 [BLOG APP] <a name="about-project"></a>
 
-**[Blog App]** is a project based on Ruby on Rails in which the blog is to be created as a part of learning project. 
+**[Blog App]** is a project based on Ruby on Rails in which the blog is to be created as a part of learning project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
