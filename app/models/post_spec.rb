@@ -25,8 +25,8 @@ RSpec.describe Post, type: :model do
 
   describe '#five_most_recent_comments' do
     let!(:post) { create(:post) }
-    let!(:recent_comments) { create_list(:comment, 5, post: post) }
-    let!(:old_comments) { create_list(:comment, 3, post: post, created_at: 1.month.ago) }
+    let!(:recent_comments) { create_list(:comment, 5, post:) }
+    let!(:old_comments) { create_list(:comment, 3, post:, created_at: 1.month.ago) }
 
     it 'returns five most recent comments on the post' do
       expect(post.five_most_recent_comments).to eq(recent_comments.reverse)
