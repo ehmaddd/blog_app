@@ -12,10 +12,10 @@
 <% if @posts.present? %>
   <% @posts.each do |post| %>
   <a class="each_post_detail" href="<%= user_post_path(@user, post) %>">
-  <div class="each_post">
+  <div class="post_each_post">
     <h3>Title: <%= post.title %></h3>
     <p>Text: <%= post.text %></p>
-    <div class="like_comment_div">
+    <div class="post_like_comment_div">
       <p>Comments: <%= post.comments_counter %>,
       Likes: <%= post.likes_counter %></p>
     </div>
