@@ -1,1 +1,16 @@
-<h1>Specific Post</h1>
+<% author = User.find(@post.author_id) %>
+<div class="individual_post">
+  <div class="individual_header">
+    <p><b><%= @post.title %></b> by <b><%= author.name %></b></p>
+    <p><b>Comments:</b> <%= @post.comments_counter %>, <b>Likes: </b><%= @post.likes_counter %></p>
+  </div>
+  <%= @post.text %></p>
+</div>
+
+<% @comments = Comment.where(post_id: @post.id) %>
+  <div class="all_comments">
+  <% @comments.each do |comment| %>
+     <% author = User.find(comment.author_id) %>
+    <p><b>Username: </b><%= author.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>Comment: </b><%= comment.text %></p>
+  <% end%>
