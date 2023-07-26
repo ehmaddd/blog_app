@@ -1,1 +1,32 @@
-<h1>Here are the posts for user</h1>
+<div class="user_find_container">
+    <div class="user_img_div">
+      <img class="user_img" src="<%= @user.photo %>">
+    </div>
+    <div class="user_internal">
+      <h1><%= @user.name %></h1>
+      <p class="post_count">Number of Posts: <%= @user.posts_counter %></p>
+    </div>
+</div>
+<div class="user_bio">
+  <h2>Bio</h2>
+  <p><%= @user.bio %></p>
+</div>
+<div class="each_post_container">
+<% @posts = Post.where(author_id: @user.id) %>
+<% if @posts.present? %>
+  <% @posts.each do |post| %>
+  <div class="each_post">
+    <h3>Post: <%= post.title %></h3>
+    <p><%= post.text %></p>
+    <div class="like_comment_div">
+      <p>Comments: <%= post.comments_counter %>,
+      Likes: <%= post.likes_counter %></p>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <p>No posts found for this user.</p>
+<% end %>
+</div>
+<%= link_to "See All Posts", user_posts_path(@user), class: "show_posts_button" %>
+

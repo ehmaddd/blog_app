@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    render # index
+    @users = User.all
   end
 end
