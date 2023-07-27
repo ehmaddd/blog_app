@@ -3,7 +3,13 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    if params[:show_all] == 'true'
+      @posts = @user.posts
+      @show_all = true
+    else
+      @posts = @user.three_most_recent_posts
+      @show_all = false
+    end
     @comments = @posts.flat_map(&:five_most_recent_comments)
   end
 
