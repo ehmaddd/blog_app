@@ -5,6 +5,7 @@
     <p><b>Comments:</b> <%= @post.comments_counter %>, <b>Likes: </b><%= @post.likes_counter %></p>
   </div>
   <%= @post.text %></p>
+  <%= button_to "Like", user_post_likes_path(@post.author, @post), method: :post %>
 </div>
 
 <% @comments = Comment.where(post_id: @post.id) %>
