@@ -4,10 +4,10 @@ class LikesController < ApplicationController
     post = Post.find(params[:post_id])
 
     # Ensure that the user hasn't already liked the post
-    if user.likes.exists?(post: post)
+    if user.likes.exists?(post:)
       flash[:alert] = 'You have already liked this post!'
     else
-      like = Like.new(author: user, post: post)
+      like = Like.new(author: user, post:)
 
       if like.save
         flash[:notice] = 'You liked this post!'
