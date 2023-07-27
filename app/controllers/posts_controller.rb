@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_user
 
+  def new
+    @post = Post.new
+  end
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
