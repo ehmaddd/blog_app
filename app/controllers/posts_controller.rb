@@ -1,6 +1,18 @@
 class PostsController < ApplicationController
   before_action :set_user
 
+  def create
+    @post = @current_user.posts.new(post_params)
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
   def new
     @post = Post.new
   end
@@ -16,6 +28,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 
   def set_user
     @user = User.find(params[:user_id])
