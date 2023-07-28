@@ -1,22 +1,14 @@
 class LikesController < ApplicationController
   def create
-    user = current_user
-    post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
+    @like = @post.likes.build(author: current_user)
 
-    # Ensure that the user hasn't already liked the post
-    if user.likes.exists?(post:)
-      flash[:alert] = 'You have already liked this post!'
+    if @like.save
+      flash[:notice] = 'You liked this post!'
     else
-      like = Like.new(author: user, post:)
-
-      if like.save
-        flash[:notice] = 'You liked this post!'
-      else
-        flash[:alert] = 'Unable to like the post.'
-      end
+      flash[:alert] = 'Unable to like the post.'
     end
 
-    # Redirect to the post show page with updated likes count
-    redirect_to user_post_path(post.author, post, likes_count: post.likes_counter)
+    redirect_to user_post_path(@post.author, @post)
   end
 end
