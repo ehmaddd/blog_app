@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes(:comments)
     @comments = @posts.flat_map(&:five_most_recent_comments)
   end
 
