@@ -46,7 +46,6 @@ RSpec.describe 'User post index page', type: :feature do
   end
 
   it 'displays a section for pagination if there are more posts than fit on the view' do
-    save_and_open_page
     expect(page).to have_css('.pagination')
   end
 
