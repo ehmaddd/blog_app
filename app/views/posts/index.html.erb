@@ -33,5 +33,4 @@
 <% else %>
   <p>No posts found for this user.</p>
 <% end %>
-<% post = Post.find(@user.id) %>
-  <a class="pagination_button" href="<%= user_post_path(@user, post) %>">Pagination</a>
+  <a class="pagination_button" href="<%= user_posts_path(@user) %>">Pagination</a>

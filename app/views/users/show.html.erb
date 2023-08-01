@@ -17,7 +17,7 @@
     <li>
       <div class="each_post_inner">
         <div class="each_post">
-          <h3>Post: <%= post.title %></h3>
+          <a class="each_post_detail" href="<%= user_post_path(@user, post) %>"><h3>Post: <%= post.title %></h3></a>
           <p><%= post.text %></p>
         </div>
       </div>
