@@ -19,7 +19,7 @@ RSpec.describe 'User post index page', type: :feature do
   end
 
   it 'displays the number of posts the user has written' do
-    expect(page).to have_content("Number of Posts: 30")
+    expect(page).to have_content('Number of Posts: 30')
   end
 
   it 'displays a post\'s title and some of its body' do
@@ -58,8 +58,8 @@ RSpec.describe 'User post index page', type: :feature do
   def create_user_posts_comments_likes(user)
     posts = create_list(:post, 15, author_id: user.id)
     posts.each do |post|
-      create_list(:comment, 2, post: post)
-      create_list(:like, 5, post: post)
+      create_list(:comment, 2, post:)
+      create_list(:like, 5, post:)
     end
   end
 end

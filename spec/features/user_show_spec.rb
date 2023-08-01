@@ -37,7 +37,7 @@ RSpec.describe 'User show page', type: :feature do
 
   it 'redirects to the post show page when clicking a user\'s post' do
     post = user.posts.first
-    first(:link, "Post: #{post.title}", class: "each_post_detail").click
+    first(:link, "Post: #{post.title}", class: 'each_post_detail').click
     expect(page).to have_content(post.title)
   end
 

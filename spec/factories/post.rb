@@ -6,13 +6,13 @@ FactoryBot.define do
 
     trait :with_comments do
       after(:create) do |post|
-        create_list(:comment, 2, post: post)
+        create_list(:comment, 2, post:)
       end
     end
 
     trait :with_likes do
       after(:create) do |post|
-        create_list(:like, 5, post: post)
+        create_list(:like, 5, post:)
       end
     end
   end

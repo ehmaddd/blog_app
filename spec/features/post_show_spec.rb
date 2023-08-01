@@ -4,7 +4,7 @@ RSpec.describe 'Post show page', type: :feature do
   include Rails.application.routes.url_helpers
   let(:user) { create(:user) }
   let(:post) { create(:post) }
-  let!(:comments) { create_list(:comment, 5, post: post) }
+  let!(:comments) { create_list(:comment, 5, post:) }
 
   before do
     visit "users/#{user.id}/posts/#{post.id}"
