@@ -3,6 +3,17 @@ FactoryBot.define do
     title { 'Sample Post Title' }
     text { 'This is the content of the post.' }
     association :author, factory: :user
-    # Other post attributes
+
+    trait :with_comments do
+      after(:create) do |post|
+        create_list(:comment, 2, post:)
+      end
+    end
+
+    trait :with_likes do
+      after(:create) do |post|
+        create_list(:like, 5, post:)
+      end
+    end
   end
 end
