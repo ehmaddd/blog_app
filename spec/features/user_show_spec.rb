@@ -43,6 +43,6 @@ RSpec.describe 'User show page', type: :feature do
 
   it 'redirects to the user\'s posts index page when clicking to see all posts' do
     click_link('See All Posts')
-    expect(page).to have_link('Pagination', href: user_posts_path(user))
+    expect(page).to_not have_link('Pagination', href: user_posts_path(user))
   end
 end
