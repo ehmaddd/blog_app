@@ -1,6 +1,9 @@
-<%= form_with(model: [@post, @comment], url: user_post_comments_path(@post.author, @post)) do |form| %>
+<%= form_with(model: @comment, url: post_comments_path(@post), local: true) do |form| %>
   <div>
-    <%= form.text_area :text, placeholder: 'Enter your comment here' %>
-    <%= form.submit 'Create Comment' %>
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </div>
+  <div>
+    <%= form.submit "Create Comment" %>
   </div>
 <% end %>
