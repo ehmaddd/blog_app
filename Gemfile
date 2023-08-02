@@ -79,3 +79,5 @@ gem 'factory_bot_rails', '~> 6.2'
 gem 'faker', '~> 2.18'
 
 gem 'rails-controller-testing'
+
+gem 'will_paginate'
