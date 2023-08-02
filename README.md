@@ -100,6 +100,12 @@ By following Usage steps, you will get a fully completed functional database.
 - Twitter: [@ehmaddd_pk](https://twitter.com/ehmaddd_pk)
 - LinkedIn: [@ehmaddd](https://www.linkedin.com/in/ehmaddd/)
 
+  👤 **Patrick Mukula**
+
+- GitHub: [@Patfarmurs](https://github.com/Patfarmurs)
+- Twitter: [@MukulayengeP](https://twitter.com/MukulayengeP)
+- LinkedIn: [@Patrick-Mukula](https://www.linkedin.com/in/Patrick-Mukula/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
