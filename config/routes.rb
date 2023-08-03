@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  delete "/posts/:id", to: "posts#destroy", as: :destroy_post
+
   root to: "users#index"
 end
