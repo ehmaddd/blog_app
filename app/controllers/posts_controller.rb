@@ -18,9 +18,9 @@ class PostsController < ApplicationController
     authorize! :destroy, @post # Ensure user is authorized to delete the post
 
     if @post.destroy
-      flash[:notice] = "Post was successfully deleted."
+      flash[:notice] = 'Post was successfully deleted.'
     else
-      flash[:alert] = "Unable to delete the post."
+      flash[:alert] = 'Unable to delete the post.'
     end
 
     redirect_to user_path(@post.author)
