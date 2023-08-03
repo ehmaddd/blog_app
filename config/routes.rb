@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+  devise_for :users
 
   resources :users do
     resources :posts do
@@ -9,4 +7,6 @@ Rails.application.routes.draw do
       resources :comments, only: [:new, :create]
     end
   end
+
+  root to: "users#index"
 end
