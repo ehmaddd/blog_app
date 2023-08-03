@@ -171,3 +171,40 @@ body {
   position: relative;
   right: -75%;
 }
+
+.confirm-container {
+  width: 500px;
+  border: 2px solid black;
+  background-color: gray;
+  border-radius: 4px;
+  margin: auto;
+  padding: 2%;
+  color: white;
+}
+
+.login-header {
+  text-align: center;
+}
+
+.field {
+  margin-top: 2%;
+}
+
+.confirm-container a {
+  text-decoration: none;
+  color: pink;
+}
+
+.confirm-container input {
+  height: 20px;
+  width: 490px;
+}
+
+.actions {
+  height: 55px;
+  width: 490px;
+}
+
+.confirm-container a:hover {
+  color: white;
+}
