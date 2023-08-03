@@ -81,3 +81,5 @@ gem 'faker', '~> 2.18'
 gem 'rails-controller-testing'
 
 gem 'will_paginate'
+
+gem 'devise', '~> 4.8'
