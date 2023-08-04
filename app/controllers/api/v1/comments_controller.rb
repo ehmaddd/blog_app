@@ -1,12 +1,13 @@
+# app/controllers/api/v1/comments_controller.rb
+
 module Api
   module V1
     class CommentsController < ApplicationController
-      before_action :authenticate_user!, only: [:create]
       before_action :set_post
 
       def create
         comment = @post.comments.build(comment_params)
-        comment.user = current_user # Use the currently logged-in user as the author
+        comment.user = current_user
 
         if comment.save
           render json: comment, status: :created
