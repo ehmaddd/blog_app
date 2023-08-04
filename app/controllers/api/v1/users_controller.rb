@@ -5,6 +5,7 @@ module Api
         users = User.all
         render json: users
       end
+
       def posts
         user = User.find(params[:user_id])
         posts = user.posts

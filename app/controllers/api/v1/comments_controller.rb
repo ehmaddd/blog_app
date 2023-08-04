@@ -6,7 +6,7 @@ module Api
 
       def create
         comment = @post.comments.build(comment_params)
-        comment.user = current_user  # Use the currently logged-in user as the author
+        comment.user = current_user # Use the currently logged-in user as the author
 
         if comment.save
           render json: comment, status: :created
