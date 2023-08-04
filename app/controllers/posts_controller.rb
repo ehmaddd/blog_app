@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_user
 
   def create
@@ -11,6 +12,19 @@ class PostsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post # Ensure user is authorized to delete the post
+
+    if @post.destroy
+      flash[:notice] = 'Post was successfully deleted.'
+    else
+      flash[:alert] = 'Unable to delete the post.'
+    end
+
+    redirect_to user_path(@post.author)
   end
 
   def new

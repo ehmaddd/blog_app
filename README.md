@@ -100,7 +100,7 @@ By following Usage steps, you will get a fully completed functional database.
 - Twitter: [@ehmaddd_pk](https://twitter.com/ehmaddd_pk)
 - LinkedIn: [@ehmaddd](https://www.linkedin.com/in/ehmaddd/)
 
-  👤 **Patrick Mukula**
+👤 **Patrick Mukula**
 
 - GitHub: [@Patfarmurs](https://github.com/Patfarmurs)
 - Twitter: [@MukulayengeP](https://twitter.com/MukulayengeP)
