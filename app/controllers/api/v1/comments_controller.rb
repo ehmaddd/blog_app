@@ -1,17 +1,12 @@
 module Api
   module V1
     class CommentsController < ApplicationController
-      skip_before_action :verify_authenticity_token
-      before_action :set_user_and_post
-
-      def index
-        comments = @post.comments
-        render json: comments
-      end
+      before_action :authenticate_user!, only: [:create]
+      before_action :set_post
 
       def create
         comment = @post.comments.build(comment_params)
-        comment.author = @user
+        comment.user = current_user  # Use the currently logged-in user as the author
 
         if comment.save
           render json: comment, status: :created
@@ -22,9 +17,8 @@ module Api
 
       private
 
-      def set_user_and_post
-        @user = User.find(params[:user_id])
-        @post = @user.posts.find(params[:post_id])
+      def set_post
+        @post = Post.find(params[:post_id])
       end
 
       def comment_params
