@@ -16,6 +16,11 @@ module Api
         end
       end
 
+      def index
+        comments = @post.comments
+        render json: comments
+      end
+
       private
 
       def set_post
